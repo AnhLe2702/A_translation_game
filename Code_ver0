@@ -1,0 +1,12 @@
+def translate(phrase):
+    translation = "" #Leave blank because we use this blank as a space to add the letter g in later
+    for letter in phrase:
+        if letter.lower() in "aeiou": #.lower() will convert any letter to lowercase to allow Python to check with the "aeiou"
+            if letter.isupper(): 
+                translation = translation + "G" #This makes sure that if the original vowels in the phrase is an uppercase, then Python will use uppercase accordingly
+            else:
+                translation = translation + "g" #This makes sure that if the original vowels in the phrase is a lowercase, then Python will use lowercase accordingly
+        else:
+            translation = translation + letter
+    return translation
+print(translate(input("Enter phrase: ")))
